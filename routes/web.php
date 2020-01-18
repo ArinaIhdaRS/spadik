@@ -53,6 +53,7 @@ Route::delete('/rencana-belajar-harian/{id}/hapus', 'GuruController@deleterpph')
 Route::get('/rencana-belajar-mingguan', 'GuruController@mingguan')->name('mingguan');
 Route::get('/program-semester', 'GuruController@semester')->name('semester');
 Route::get('/semua-rencana-belajar', 'GuruController@semuarpp')->name('semuarpp');
+Route::get('/showrpmm', 'GuruController@showRPPM')->name('showRPPM');
 
 //PENILAIAN
 Route::get('/penilaian', 'GuruController@penilaian')->name('penilaian');

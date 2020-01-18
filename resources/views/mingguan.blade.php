@@ -38,6 +38,25 @@
                 <div class="panel-heading">Semua RPPM</div>
                 <div class="panel-body">
                     <div class="table">
+                    <form action="{{route('showRPPM')}}">
+                        <select type="text" name="tahun" placeholder="Tahun Ajaran">
+                            <option value="2019/2020">2019/2020</option>
+                            <option value="2020/2021">2020/2021</option>
+                        </select>
+                        <select type="text" name="semester" placeholder="Tahun Ajaran">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <select type="text" name="minggu" placeholder="Minggu">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                        <button type="submit">Cari</button>
+                    </form>
                     <table class="table fixed-table-container">
                         <thead>
                             <tr class="">
@@ -51,10 +70,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="column1"><a href="#">Minggu ke 1</a></td>
-                            <td class="column1"><a href="#">Minggu ke 2</a></td>
-                            <td class="column1"><a href="#">Minggu ke 3</a></td>
-                            <td class="column1"><a href="#">Minggu ke 4</a></td>                        
+                        
                         </tr>
                                 <!-- <tr>
                                     <td class="column1">1</td>

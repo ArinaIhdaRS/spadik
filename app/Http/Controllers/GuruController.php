@@ -195,10 +195,10 @@ class GuruController extends Controller
         return redirect()->route('buatrpphkegiatan', ['id' => $rpphkgt->id_harian])->with('success', 'Kegiatan berhasil dihapus.');      
     }
 
-    public function mingguan()
+    public function mingguan(Request $req)
     {
-        $harian = Harian::where('minggu', 4)->get();
-        // dd($harian);
+     
+
         return view('mingguan');
     }
 
@@ -445,5 +445,15 @@ class GuruController extends Controller
         $arrIndikatorHarian = explode(';', $kompetensidasar->indikatorharian);    
         $aspek = Aspek::all();           
         return view('nilaiindikator', compact('nilaiindikator', 'arrkompetensidasar', 'arrIndikatorHarian', 'aspek', 'id_harian', 'id_datasiswa'));
+    }
+
+    public function showRPPM(Request $req){
+        $id_kelas = Kelas::where('id_users', Auth::id())->first()->id;
+        $minggu = Harian::where('tahunajaran', $req->tahun)
+        ->where('semester', $req->semester)
+        ->where('minggu', $req->minggu)
+        ->where('id_kelas', $id_kelas)
+        ->get();
+        return view('showrppm', compact('minggu'));
     }
 }
